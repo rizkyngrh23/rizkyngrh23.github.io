@@ -4,57 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My GitHub.io Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f7f7;
-            color: #333;
-        }
-        header {
-            background-color: #a8dadc;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #457b9d;
-            padding: 10px;
-        }
-        nav a {
-            color: #f1faee;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-        }
-        nav a:hover {
-            color: #e63946;
-        }
-        .container {
-            padding: 20px;
-            text-align: center;
-        }
-        .container h1 {
-            color: #1d3557;
-        }
-        .container p {
-            color: #457b9d;
-        }
-        footer {
-            background-color: #a8dadc;
-            padding: 10px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My GitHub.io Website</h1>
+        <h1 id="welcome-message">Welcome to My GitHub.io Website</h1>
     </header>
     <nav>
         <a href="#home">Home</a>
@@ -62,24 +16,38 @@
         <a href="#profile">Profile</a>
         <a href="#contact">Contact Me</a>
     </nav>
+    <button class="dark-mode-toggle">Toggle Dark Mode</button>
     <div class="container" id="home">
         <h1>Home</h1>
-        <p>This is the home section of my GitHub.io website.</p>
+        <p>Hi, I'm Rizky! Welcome to my GitHub.io website. I'm a passionate developer who loves coding and building projects.</p>
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>I am a software developer with a strong background in web development and a keen interest in learning new technologies. I enjoy solving complex problems and working on innovative projects.</p>
+        </div>
+        <!-- Removed Testimonials section -->
+        <div class="interests">
+            <h2>Interests</h2>
+            <p>In my free time, I enjoy exploring new programming languages, contributing to open-source projects, and staying updated with the latest trends in technology. I also love reading books, and playing video games.</p>
+        </div>
     </div>
     <div class="container" id="projects">
         <h1>Projects</h1>
-        <p>Here you will find my projects.</p>
+        <p>Here are some of my projects:</p>
+        <div id="projects-list">
+            <!-- Repositories will be dynamically populted here -->
+        </div>
     </div>
     <div class="container" id="profile">
         <h1>Profile</h1>
-        <p>This is my profile section.</p>
+        <p>I'm a learning developer with vast experience in programming languages especially JavaScript and web development. I enjoy learning new things and taking on challenging projects.</p>
     </div>
     <div class="container" id="contact">
         <h1>Contact Me</h1>
-        <p>Feel free to reach out to me!</p>
+        <p>Feel free to reach out to me via email at <a href="mailto:rizky@example.com">rizkynugraha999@gmail.com</a> or connect with me on <a href="https://www.linkedin.com/in/rizkyngrh23" target="_blank">LinkedIn</a>.</p>
     </div>
     <footer>
         <p>&copy; 2023 My GitHub.io Website</p>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
