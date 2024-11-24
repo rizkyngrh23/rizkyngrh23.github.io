@@ -416,3 +416,49 @@ footer {
 .social-media-item a:hover {
     text-decoration: underline;
 }
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 40px 10px;
+    }
+    nav {
+        flex-direction: column;
+        margin: 10px 0;
+    }
+    nav a {
+        margin: 5px 0;
+        padding: 10px;
+        background-color: #5577bb;
+        color: #fff;
+        border: 4px solid #000;
+        border-radius: 11px;
+        text-align: center;
+        box-shadow: 4px 4px 0 #000;
+    }
+    nav a:hover {
+        background-color: #88aaee;
+        color: #000;
+    }
+    .container {
+        padding: 10px;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-item {
+        padding: 10px;
+    }
+    .skills ul {
+        padding: 0;
+    }
+    .skills li {
+        padding: 8px;
+    }
+    .social-media {
+        flex-direction: column;
+    }
+    .social-media-item {
+        margin-bottom: 10px;
+    }
+}
