@@ -1,6 +1,13 @@
 const toggleButton = document.querySelector('.dark-mode-toggle');
 toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
+    localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('dark-mode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
 });
 
 fetch('https://api.github.com/users/rizkyngrh23/repos')
@@ -81,3 +88,11 @@ function typeWriter() {
 }
 
 typeWriter();
+
+document.querySelectorAll('.container > div').forEach(div => {
+    div.style.opacity = 0;
+    div.style.transition = 'opacity 1s ease-in-out';
+    setTimeout(() => {
+        div.style.opacity = 1;
+    }, 500);
+});
