@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rizky Portofolio Website</title>
+    <title>Rizky Portfolio Website</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1 id="welcome-message">Welcome to Rizky Portofolio Website</h1>
+        <h1 id="welcome-message">Welcome to Rizky Portfolio Website</h1>
     </header>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#profile">Profile</a>
-        <a href="#contact">Contact Me</a>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="profile.html">Profile</a>
+        <a href="blog.html">Blog</a> 
+        <a href="contact.html">Contact Me</a> 
     </nav>
     <button class="dark-mode-toggle">Toggle Dark Mode</button>
     <div class="container" id="home">
@@ -24,29 +25,56 @@
             <h2>About Me</h2>
             <p>I am a software developer with a strong background in web development and a keen interest in learning new technologies. I enjoy solving complex problems and working on innovative projects.</p>
         </div>
-        <!-- Removed Services section -->
         <div class="interests">
             <h2>Interests</h2>
             <p>In my free time, I enjoy exploring new programming languages, contributing to open-source projects, and staying updated with the latest trends in technology. I also love reading books, and playing video games.</p>
         </div>
-    </div>
-    <div class="container" id="projects">
-        <h1>Projects</h1>
-        <p>Here are some of my projects:</p>
-        <div id="projects-list" class="projects-grid">
-            <!-- Repositories will be dynamically populated here -->
+        <div class="blog-posts">
+            <h2>Recent Blog Posts</h2>
+            <div class="blog-post-item">
+                <h3>Understanding JavaScript Closures</h3>
+                <p>A deep dive into closures in JavaScript and how they work.</p>
+                <a href="#">Read more</a>
+            </div>
+            <div class="blog-post-item">
+                <h3>Getting Started with Node.js</h3>
+                <p>An introductory guide to building your first Node.js application.</p>
+                <a href="#">Read more</a>
+            </div>
+            <div class="blog-post-item">
+                <h3>Mastering CSS Grid</h3>
+                <p>Learn how to create complex layouts easily with CSS Grid.</p>
+                <a href="#">Read more</a>
+            </div>
+        </div>
+        <div class="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <p><strong>Building Server for Newbie</strong></p>
+                    <p>Server setup guide.</p>
+                    <a href="https://github.com/rizkyngrh23/building-server-for-newbie" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project-item">
+                    <p><strong>Cipher Hub</strong></p>
+                    <p>Encryption tools.</p>
+                    <a href="https://github.com/rizkyngrh23/cipher-hub" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project-item">
+                    <p><strong>Teralink Generator</strong></p>
+                    <p>Generate download links.</p>
+                    <a href="https://github.com/rizkyngrh23/teralink-generator" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project-item">
+                    <p><strong>NMME CNN Training</strong></p>
+                    <p>Train CNN models.</p>
+                    <a href="https://github.com/rizkyngrh23/nmme-cnn-training" target="_blank">View on GitHub</a>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="container" id="profile">
-        <h1>Profile</h1>
-        <p>I'm a learning developer with vast experience in programming languages especially JavaScript and web development. I enjoy learning new things and taking on challenging projects.</p>
-    </div>
-    <div class="container" id="contact">
-        <h1>Contact Me</h1>
-        <p>Feel free to reach out to me via email at <a href="mailto:rizky@example.com">rizkynugraha999@gmail.com</a> or connect with me on <a href="https://www.linkedin.com/in/rizkyngrh23" target="_blank">LinkedIn</a>.</p>
-    </div>
     <footer>
-        <p>&copy; 2024 Rizky Portofolio Website</p>
+        <p>&copy; 2024 Rizky Portfolio Website</p>
     </footer>
     <script src="scripts.js"></script>
 </body>

@@ -1,25 +1,13 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Toggle dark mode
 const toggleButton = document.querySelector('.dark-mode-toggle');
 toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
 
-// Fetch and display GitHub repositories
 fetch('https://api.github.com/users/rizkyngrh23/repos')
     .then(response => response.json())
     .then(repos => {
         const projectsList = document.getElementById('projects-list');
-        const excludedRepos = ['rizkyngrh23.github.io', 'rizkyngrh23', 'github-readme-stats']; // Add repo names to exclude
+        const excludedRepos = ['rizkyngrh23.github.io', 'rizkyngrh23', 'github-readme-stats'];
 
         repos
             .filter(repo => !excludedRepos.includes(repo.name))
@@ -35,16 +23,50 @@ fetch('https://api.github.com/users/rizkyngrh23/repos')
                 projectTitle.appendChild(projectLink);
 
                 const projectDescription = document.createElement('p');
-                projectDescription.textContent = repo.description || 'No description available.';
+                const shortDescription = repo.description ? repo.description.split(' ').slice(0, 5).join(' ') + '...' : 'No description available.';
+                projectDescription.textContent = shortDescription;
+                projectDescription.style.transition = 'max-height 0.5s ease-out';
+                projectDescription.style.overflow = 'hidden';
+                projectDescription.style.maxHeight = '50px';
 
+                const detailsButton = document.createElement('button');
+                detailsButton.textContent = 'Details';
+                detailsButton.style.backgroundColor = '#5577bb'; 
+                detailsButton.style.color = '#fff'; 
+                detailsButton.style.border = 'none'; 
+                detailsButton.style.borderRadius = '5px'; 
+                detailsButton.style.padding = '5px 10px'; 
+                detailsButton.style.cursor = 'pointer'; 
+                detailsButton.style.marginTop = '10px'; 
+                detailsButton.style.display = 'block'; 
+                detailsButton.style.width = 'calc(100% - 20px)'; 
+                detailsButton.style.position = 'absolute';
+                detailsButton.style.bottom = '10px'; 
+                detailsButton.style.left = '10px'; 
+                detailsButton.addEventListener('click', () => {
+                    if (projectDescription.textContent === shortDescription) {
+                        projectDescription.textContent = repo.description || 'No description available.';
+                        projectDescription.style.maxHeight = '200px';
+                        detailsButton.textContent = 'Hide Details';
+                    } else {
+                        projectDescription.style.maxHeight = '50px';
+                        setTimeout(() => {
+                            projectDescription.textContent = shortDescription;
+                            detailsButton.textContent = 'Details';
+                        }, 500); 
+                    }
+                });
+
+                projectItem.style.position = 'relative'; 
+                projectItem.style.paddingBottom = '70px'; 
                 projectItem.appendChild(projectTitle);
                 projectItem.appendChild(projectDescription);
+                projectItem.appendChild(detailsButton);
                 projectsList.appendChild(projectItem);
             });
     })
     .catch(error => console.error('Error fetching repositories:', error));
 
-// Typewriter effect for welcome message
 const welcomeMessage = document.getElementById('welcome-message');
 const messageText = welcomeMessage.textContent;
 welcomeMessage.textContent = '';
