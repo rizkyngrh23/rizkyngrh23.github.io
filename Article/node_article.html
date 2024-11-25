@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Node.js - Rizky Portfolio Website</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .code-box {
+            background-color: #f4f4f4;
+            border-left: 4px solid #88aaee;
+            padding: 10px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        .code-box code {
+            display: block;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Getting Started with Node.js</h1>
+    </header>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../profile.html">Profile</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../contact.html">Contact Me</a>
+    </nav>
+    <button class="dark-mode-toggle">Toggle Dark Mode</button>
+    <div class="container" id="blog-post" style="text-align: justify;">
+        <h1>Getting Started with Node.js</h1>
+        <p>Welcome to this introductory guide on building your first Node.js application! Node.js is a powerful JavaScript runtime that allows you to run JavaScript on the server side. It's fast, efficient, and perfect for building scalable network applications.</p>
+        
+        <h2>Step 1: Install Node.js</h2>
+        <p>First, you need to install Node.js on your computer. Head over to the <a href="https://nodejs.org/" target="_blank">official Node.js website</a> and download the installer for your operating system. Follow the installation instructions, and you'll have Node.js up and running in no time.</p>
+        
+        <h2>Step 2: Set Up Your Project</h2>
+        <p>Create a new directory for your project and navigate into it using your terminal or command prompt:</p>
+        <div class="code-box">
+            <code class="language-bash">mkdir my-first-node-app<br>cd my-first-node-app</code>
+        </div>
+        <p>Next, initialize a new Node.js project by running:</p>
+        <div class="code-box">
+            <code class="language-bash">npm init -y</code>
+        </div>
+        <p>This command will create a <code>package.json</code> file with default settings.</p>
+        
+        <h2>Step 3: Create Your First Server</h2>
+        <p>Now, let's create a simple server. Create a new file called <code>index.js</code> and open it in your favorite code editor. Add the following code:</p>
+        <div class="code-box">
+            <code class="language-javascript">const http = require('http');<br><br>const server = http.createServer((req, res) => {<br>    res.statusCode = 200;<br>    res.setHeader('Content-Type', 'text/plain');<br>    res.end('Hello, World!\\n');<br>});<br><br>const PORT = 3000;<br>server.listen(PORT, () => {<br>    console.log(`Server running at http://localhost:${PORT}/`);<br>});</code>
+        </div>
+        <p>This code creates a basic HTTP server that listens on port 3000 and responds with "Hello, World!" to any incoming requests.</p>
+        
+        <h2>Step 4: Run Your Server</h2>
+        <p>To start your server, run the following command in your terminal:</p>
+        <div class="code-box">
+            <code class="language-bash">node index.js</code>
+        </div>
+        <p>You should see the message "Server running at http://localhost:3000/" in your terminal. Open your web browser and navigate to <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> to see your server in action!</p>
+        
+        <h2>Conclusion</h2>
+        <p>Congratulations! You've just built your first Node.js application. This is just the beginning of what you can do with Node.js. From here, you can explore more advanced topics like working with databases, building APIs, and creating real-time applications.</p>
+        <p>Happy coding!</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 Rizky Portfolio Website</p>
+    </footer>
+    <script src="../scripts.js"></script>
+</body>
+</html>
