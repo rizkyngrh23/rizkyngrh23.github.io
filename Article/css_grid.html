@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering CSS Grid - Rizky Portfolio Website</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .code-box {
+            background-color: #f4f4f4;
+            border-left: 4px solid #88aaee;
+            padding: 10px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        .code-box code {
+            display: block;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mastering CSS Grid</h1>
+    </header>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../profile.html">Profile</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../contact.html">Contact Me</a>
+    </nav>
+    <button class="dark-mode-toggle">Toggle Dark Mode</button>
+    <div class="container" id="blog-post" style="text-align: justify;">
+        <h1>Mastering CSS Grid</h1>
+        <p>CSS Grid Layout is a powerful tool for creating two-dimensional layouts on the web. It allows you to design complex layouts with ease and provides a lot of flexibility. In this article, we'll explore the basics of CSS Grid and how to use it to create responsive layouts.</p>
+        
+        <h2>Getting Started with CSS Grid</h2>
+        <p>To get started with CSS Grid, you need to define a grid container and its grid items. Here's a simple example:</p>
+        <div class="code-box">
+            <code class="language-html">&lt;div class="grid-container"&gt;
+    &lt;div class="grid-item"&gt;1&lt;/div&gt;
+    &lt;div class="grid-item"&gt;2&lt;/div&gt;
+    &lt;div class="grid-item"&gt;3&lt;/div&gt;
+    &lt;div class="grid-item"&gt;4&lt;/div&gt;
+    &lt;div class="grid-item"&gt;5&lt;/div&gt;
+    &lt;div class="grid-item"&gt;6&lt;/div&gt;
+&lt;/div&gt;</code>
+        </div>
+        <p>Next, you need to define the grid container and grid items in your CSS:</p>
+        <div class="code-box">
+            <code class="language-css">.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.grid-item {
+    background-color: #88aaee;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 5px;
+}</code>
+        </div>
+        <p>This CSS defines a grid container with three equal-width columns and a gap of 10px between the grid items. Each grid item has a background color, padding, and border.</p>
+        
+        <h2>Responsive Layouts with CSS Grid</h2>
+        <p>One of the great features of CSS Grid is its ability to create responsive layouts. You can use media queries to adjust the grid layout based on the screen size. Here's an example:</p>
+        <div class="code-box">
+            <code class="language-css">.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}</code>
+        </div>
+        <p>In this example, the grid layout changes based on the screen size. For screens smaller than 768px, the grid has two columns. For screens smaller than 480px, the grid has one column.</p>
+        
+        <h2>Advanced Grid Features</h2>
+        <p>CSS Grid also provides advanced features like grid areas, grid lines, and grid gaps. Here's an example of using grid areas:</p>
+        <div class="code-box">
+            <code class="language-html">&lt;div class="grid-container"&gt;
+    &lt;div class="header"&gt;Header&lt;/div&gt;
+    &lt;div class="sidebar"&gt;Sidebar&lt;/div&gt;
+    &lt;div class="content"&gt;Content&lt;/div&gt;
+    &lt;div class="footer"&gt;Footer&lt;/div&gt;
+&lt;/div&gt;</code>
+        </div>
+        <div class="code-box">
+            <code class="language-css">.grid-container {
+    display: grid;
+    grid-template-areas:
+        'header header'
+        'sidebar content'
+        'footer footer';
+    gap: 10px;
+}
+
+.header {
+    grid-area: header;
+    background-color: #88aaee;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #5577bb;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.content {
+    grid-area: content;
+    background-color: #88aaee;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #5577bb;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 5px;
+}</code>
+        </div>
+        <p>In this example, we define grid areas for the header, sidebar, content, and footer. The <code>grid-template-areas</code> property specifies the layout of these areas.</p>
+        
+        <h2>Conclusion</h2>
+        <p>In this article, we've covered the basics of CSS Grid and how to use it to create responsive layouts. We've also explored some advanced features like grid areas. CSS Grid is a powerful tool that can help you create complex layouts with ease. From here, you can explore more advanced topics like grid alignment, grid auto-placement, and grid functions.</p>
+        <p>Happy coding!</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 Rizky Portfolio Website</p>
+    </footer>
+    <script src="../scripts.js"></script>
+</body>
+</html>

@@ -122,6 +122,12 @@ function typeWriter() {
         welcomeMessage.textContent += messageText.charAt(index);
         index++;
         setTimeout(typeWriter, 100);
+    } else {
+        setTimeout(() => {
+            welcomeMessage.textContent = '';
+            index = 0;
+            typeWriter();
+        }, 1000); 
     }
 }
 
