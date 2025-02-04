@@ -1,0 +1,26 @@
+rizkyngrh23.my.id
+```
+
+### Deploy the project
+
+Run the following commands to build and deploy your project:
+
+```sh
+# Install dependencies
+bun install
+
+# Build the project
+bun run build
+
+# Deploy the project
+bun run deploy
+```
+
+### Update GitHub Pages settings
+
+1. Go to your repository on GitHub.
+2. Click on "Settings".
+3. In the "Pages" section, change the source to the `gh-pages` branch.
+4. Ensure that the custom domain is set to `rizkyngrh23.my.id`.
+
+After completing these steps, your portfolio should be deployed to GitHub Pages and accessible via `https://rizkyngrh23.my.id`. If you encounter any issues, please provide the error messages for additional troubleshooting.

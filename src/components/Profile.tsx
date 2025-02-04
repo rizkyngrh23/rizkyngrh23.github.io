@@ -72,7 +72,7 @@ const Profile: React.FC = () => {
           <Avatar
             alt="Profile Picture"
             src="/profile.jpeg"
-            sx={{ width: 150, height: 150, margin: '0 auto', marginBottom: 2, border: '4px solid white', boxShadow: 3 }}
+            sx={{ width: { xs: 100, md: 150 }, height: { xs: 100, md: 150 }, margin: '0 auto', marginBottom: 2, border: '4px solid white', boxShadow: 3 }}
           />
           <Typography variant="body1">
             I'm a learning developer with vast experience in programming languages especially JavaScript and web development. I enjoy learning new things and taking on challenging projects.
