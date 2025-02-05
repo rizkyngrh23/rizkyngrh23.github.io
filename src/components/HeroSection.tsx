@@ -19,16 +19,16 @@ const HeroSection: React.FC = () => {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        <ListItem button component={Link} to="/home">
+        <ListItem component={Link} to="/home">
           <ListItemText primary="Home" />
         </ListItem>
-        <ListItem button component={Link} to="/projects">
+        <ListItem component={Link} to="/projects">
           <ListItemText primary="Projects" />
         </ListItem>
-        <ListItem button component={Link} to="/profile">
+        <ListItem component={Link} to="/profile">
           <ListItemText primary="Profile" />
         </ListItem>
-        <ListItem button component={Link} to="/contact">
+        <ListItem component={Link} to="/contact">
           <ListItemText primary="Contact Me" />
         </ListItem>
       </List>
