@@ -24,12 +24,12 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
-    "start": "bun run react-scripts start",
-    "build": "bun run react-scripts build",
-    "predeploy": "bun run build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "test": "bun run react-scripts test",
-    "eject": "bun run react-scripts eject"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
