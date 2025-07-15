@@ -43,8 +43,8 @@ const Profile: React.FC = () => {
     },
     {
       title: 'Web GIS Developer',
-      company: 'Freelance',
-      period: '2022 - Present',
+      company: 'PT Kereta Api Indonesia',
+      period: '2024 - Present',
       description: 'Developed web-based GIS applications and tools for spatial data visualization and analysis.',
       color: '#ab47bc',
     },
