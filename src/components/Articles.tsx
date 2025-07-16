@@ -15,7 +15,7 @@ const Articles: React.FC = () => {
     }));
   };
 
-  const openImageModal = (imageSrc: string, event: React.MouseEvent) => {
+  const openImageModal = (imageSrc: string, event: React.MouseEvent | React.KeyboardEvent) => {
     event.stopPropagation();
     setModalImage(imageSrc);
   };
@@ -381,6 +381,14 @@ const Articles: React.FC = () => {
                       '&:hover::after': {
                         background: 'linear-gradient(45deg, rgba(100, 255, 218, 0.1) 0%, rgba(79, 195, 247, 0.1) 100%)',
                       },
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`View full image of ${work.title} project`}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        openImageModal(work.image, e);
+                      }
                     }}
                   />
 

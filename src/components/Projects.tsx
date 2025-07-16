@@ -23,16 +23,26 @@ const Projects: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    fetch('https://api.github.com/users/rizkyngrh23/repos?sort=updated&per_page=12')
-      .then(response => response.json())
-      .then(data => {
+    const fetchRepositories = async () => {
+      try {
+        setLoading(true);
+        
+        const response = await fetch('https://api.github.com/users/rizkyngrh23/repos?sort=updated&per_page=12');
+        
+        if (!response.ok) {
+          throw new Error(`GitHub API error: ${response.status}`);
+        }
+        
+        const data = await response.json();
         setRepositories(data);
-        setLoading(false);
-      })
-      .catch(error => {
+      } catch (error) {
         console.error('Error fetching repositories:', error);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchRepositories();
   }, []);
 
   const getLanguageColor = (language: string) => {

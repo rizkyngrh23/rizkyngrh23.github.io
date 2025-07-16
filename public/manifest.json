@@ -1,0 +1,27 @@
+{
+  "short_name": "Rizky Portfolio",
+  "name": "Rizky Digital Space - GIS Developer Portfolio",
+  "description": "Portfolio of Rizky Nugraha - GIS Developer & Geospatial Analyst",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "profile.jpeg",
+      "type": "image/jpeg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "profile.jpeg",
+      "type": "image/jpeg",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#64ffda",
+  "background_color": "#0a0a0a",
+  "categories": ["portfolio", "developer", "gis"]
+}

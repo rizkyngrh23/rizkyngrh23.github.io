@@ -42,24 +42,24 @@ const Home: React.FC = () => {
     },
   ];
 
-  const recentBlogPosts = [
+  const recentGISWorks = [
     {
-      title: 'Getting Started with Node.js',
-      description: 'An introductory guide to building your first Node.js application with best practices.',
-      link: 'Article/node_article.html',
-      readTime: '5 min read',
+      title: 'Urban Heat Island Mapping',
+      description: 'Analysis of the correlation between vegetation density and urban heat island phenomenon in Bandung city using Landsat-8 satellite imagery.',
+      link: '/articles',
+      readTime: 'Case Study',
     },
     {
-      title: 'Building RESTful APIs',
-      description: 'Learn how to build scalable RESTful APIs using Node.js and Express framework.',
-      link: 'Article/building-api.html',
-      readTime: '8 min read',
+      title: 'Flood Vulnerability Assessment',
+      description: 'Comprehensive flood vulnerability mapping using weighted overlay analysis incorporating multiple environmental factors.',
+      link: '/articles',
+      readTime: 'GIS Analysis',
     },
     {
-      title: 'Understanding Asynchronous JavaScript',
-      description: 'A deep dive into asynchronous programming patterns and best practices in JavaScript.',
-      link: 'Article/async_js.html',
-      readTime: '10 min read',
+      title: 'Machine Learning Bias Correction',
+      description: 'Deep learning solution using CNN to enhance model data accuracy by correcting biases in environmental datasets.',
+      link: '/articles',
+      readTime: 'ML Project',
     },
   ];
 
@@ -460,10 +460,10 @@ const Home: React.FC = () => {
             color: '#64ffda',
           }}
         >
-          Recent Articles
+          Featured GIS Works
         </Typography>
         <Grid container spacing={4}>
-          {recentBlogPosts.map((post, index) => (
+          {recentGISWorks.map((work, index) => (
             <Grid item xs={12} md={4} key={index}>
               <motion.div
                 variants={fadeInVariants}
@@ -491,7 +491,7 @@ const Home: React.FC = () => {
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                       <AutoStories sx={{ color: '#64ffda', mr: 1 }} />
                       <Chip
-                        label={post.readTime}
+                        label={work.readTime}
                         size="small"
                         sx={{
                           background: 'rgba(100, 255, 218, 0.1)',
@@ -508,7 +508,7 @@ const Home: React.FC = () => {
                         color: 'text.primary',
                       }}
                     >
-                      {post.title}
+                      {work.title}
                     </Typography>
                     <Typography
                       variant="body2"
@@ -519,10 +519,10 @@ const Home: React.FC = () => {
                         flexGrow: 1,
                       }}
                     >
-                      {post.description}
+                      {work.description}
                     </Typography>
                     <Link
-                      href={post.link}
+                      href={work.link}
                       sx={{
                         color: '#64ffda',
                         textDecoration: 'none',
@@ -536,7 +536,7 @@ const Home: React.FC = () => {
                         },
                       }}
                     >
-                      Read Article <ArrowForward sx={{ fontSize: 16 }} />
+                      View Project <ArrowForward sx={{ fontSize: 16 }} />
                     </Link>
                   </CardContent>
                 </Card>
