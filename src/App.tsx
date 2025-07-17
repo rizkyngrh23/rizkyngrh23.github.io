@@ -2,6 +2,9 @@ import React, { Suspense } from 'react';
 import { CssBaseline, ThemeProvider, createTheme, Box, CircularProgress } from '@mui/material';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import MobileNavbar from './components/MobileNavbar';
+import MobileLayout from './components/MobileLayout';
+import MobileHome from './components/MobileHome';
 import ScrollToTop from './components/ScrollToTop';
 const HeroSection = React.lazy(() => import('./components/HeroSection'));
 const Home = React.lazy(() => import('./components/Home'));
@@ -154,55 +157,79 @@ const App: React.FC = () => {
       <CssBaseline />
       <Router>
         <ScrollToTop />
-        <Box
-          sx={{
-            background: 'radial-gradient(ellipse at top, rgba(100, 255, 218, 0.1), transparent), radial-gradient(ellipse at bottom, rgba(255, 107, 107, 0.1), transparent), linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)',
-            minHeight: '100vh',
-            position: 'relative',
-            '&::before': {
-              content: '""',
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background: `
-                radial-gradient(circle at 20% 50%, rgba(100, 255, 218, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(100, 255, 218, 0.05) 0%, transparent 50%)
-              `,
-              zIndex: -1,
-            },
-          }}
-        >
-          <Navbar />
-          <Box sx={{ pt: { xs: 7, md: 8 } }}>
-            <Suspense 
-              fallback={
-                <Box sx={{ 
-                  display: 'flex', 
-                  justifyContent: 'center', 
-                  alignItems: 'center', 
-                  minHeight: '50vh' 
-                }}>
-                  <CircularProgress color="primary" />
-                </Box>
-              }
-            >
-              <Routes>
-                <Route path="/" element={<HeroSection />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/articles" element={<Articles />} />
-                <Route path="/contact" element={<Contact />} />
-              </Routes>
+        <MobileLayout>
+          <Box
+            sx={{
+              background: 'radial-gradient(ellipse at top, rgba(100, 255, 218, 0.1), transparent), radial-gradient(ellipse at bottom, rgba(255, 107, 107, 0.1), transparent), linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)',
+              minHeight: '100vh',
+              position: 'relative',
+              '&::before': {
+                content: '""',
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: `
+                  radial-gradient(circle at 20% 50%, rgba(100, 255, 218, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 40% 80%, rgba(100, 255, 218, 0.05) 0%, transparent 50%)
+                `,
+                zIndex: -1,
+                display: { xs: 'none', md: 'block' },
+              },
+            }}
+          >
+            <Navbar />
+            <MobileNavbar />
+            <Box sx={{ pt: { xs: 8, md: 8 } }}>
+              <Suspense 
+                fallback={
+                  <Box sx={{ 
+                    display: 'flex', 
+                    justifyContent: 'center', 
+                    alignItems: 'center', 
+                    minHeight: '50vh' 
+                  }}>
+                    <CircularProgress color="primary" />
+                  </Box>
+                }
+              >
+                <Routes>
+                  <Route path="/" element={
+                    <>
+                      <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+                        <HeroSection />
+                      </Box>
+                      <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+                        <MobileHome />
+                      </Box>
+                    </>
+                  } />
+                  <Route path="/home" element={
+                    <>
+                      <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+                        <Home />
+                      </Box>
+                      <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+                        <MobileHome />
+                      </Box>
+                    </>
+                  } />
+                  <Route path="/profile" element={<Profile />} />
+                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/articles" element={<Articles />} />
+                  <Route path="/contact" element={<Contact />} />
+                </Routes>
+              </Suspense>
+            </Box>
+            <Suspense fallback={<div />}>
+              <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+                <Footer />
+              </Box>
             </Suspense>
           </Box>
-          <Suspense fallback={<div />}>
-            <Footer />
-          </Suspense>
-        </Box>
+        </MobileLayout>
       </Router>
     </ThemeProvider>
   );
